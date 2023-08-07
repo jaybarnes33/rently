@@ -327,7 +327,7 @@ const Listing = () => {
                 <Text className="text-gray-500">({data.hostelReviews})</Text>
 
                 <Octicons name="dot-fill" size={10} color="#EB5E55" />
-                <Text className="text-gray-500">Hostel in Tarkwa</Text>
+                <Text className="text-gray-500">Rental in Tarkwa</Text>
               </View>
 
               <View className="flex-row justify-between">
