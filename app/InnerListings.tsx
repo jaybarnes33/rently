@@ -22,6 +22,7 @@ import Amenities from "../components/Cards/Amenities";
 import Carousel from "react-native-swipeable-carousel";
 import { AuthContext } from "../context/AuthProvider";
 import { AmenityNameFunction } from "./Listing";
+import { rentify } from "../utils/text";
 
 interface TransactionsDetailsProps {
   [key: string]: string | number;
@@ -124,7 +125,9 @@ const Listing = ({
               </View>
 
               <View className="flex-row justify-between mt-3">
-                <Text className="text-2xl font-bold">{hostelName}</Text>
+                <Text className="text-2xl font-bold">
+                  {rentify(hostelName)}
+                </Text>
 
                 <ModalSheet
                   modalButton={

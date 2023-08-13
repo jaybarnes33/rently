@@ -5,6 +5,7 @@ import { AntDesign, Entypo, Ionicons } from "@expo/vector-icons";
 import Colors from "../../constants/Colors";
 
 import { useRouter } from "expo-router";
+import { rentify } from "../../utils/text";
 
 const Listing = ({
   data: hostel,
@@ -20,14 +21,9 @@ const Listing = ({
   console.log("Listing", data);
 
   const images = [
-    "https://umat.gh-accommodation.online/wp-content/uploads/2023/06/2019-10-14.jpg",
-    "https://umat.gh-accommodation.online/wp-content/uploads/2023/02/WhatsApp-Image-2023-06-21-at-08.03.49-1.jpg",
-    "https://umat.gh-accommodation.online/wp-content/uploads/2023/02/WhatsApp-Image-2023-06-21-at-08.03.49.jpg",
-    "https://umat.gh-accommodation.online/wp-content/uploads/2023/06/IMG_20220514_140601_319.jpg",
-    "https://umat.gh-accommodation.online/wp-content/uploads/2023/06/The-Point-e1687548443819.jpg",
-    "https://umat.gh-accommodation.online/wp-content/uploads/2023/06/1687523072624-oldbuilding.jpg",
-    "https://umat.gh-accommodation.online/wp-content/uploads/2023/06/IMG-20230623-WA0055.jpg",
-    "https://umat.gh-accommodation.online/wp-content/uploads/2023/06/IMG-20230623-WA0056.jpg",
+    "https://pictures-ghana.jijistatic.com/33606657_MTI4NC0xNjk1LTA5NzFjOGVmNzI.webp",
+    "https://pictures-ghana.jijistatic.com/33380328_MTI4MC05NjAtYzQ5OWQ0Y2Q1ZA.webp",
+    "https://pictures-ghana.jijistatic.com/33645870_MTYwMC0xMjAwLTNlNjY0YmJjNDQ.webp",
   ];
 
   return (
@@ -58,11 +54,11 @@ const Listing = ({
       }}
       className="my-4 w-full border border-gray-200 bg-white  rounded-2xl shadow-sm"
     >
-      <View className="absolute rounded-xl z-10 right-0 m-3 bg-yellow-50 px-2 py-1 ring-1 ring-inset ring-yellow-600/20">
+      {/* <View className="absolute rounded-xl z-10 right-0 m-3 bg-yellow-50 px-2 py-1 ring-1 ring-inset ring-yellow-600/20">
         <Text className="text-xs font-medium text-yellow-800 capitalize">
           {data.room_types[0].split("-").join(" ")}
         </Text>
-      </View>
+      </View> */}
 
       <Image
         className={`w-full h-40 rounded-t-2xl ${booking && "h-80"}`}
@@ -72,8 +68,8 @@ const Listing = ({
         }}
       />
       <View className="p-3 pb-2">
-        <Text className="text-lg font-semibold text-neutral-800">
-          {data.name}
+        <Text className="text-lg capitalize font-semibold text-neutral-800">
+          {rentify(data.name)}
         </Text>
         {/* <View className="flex flex-row items-center">
           <Text className="text-sm text-gray-500">

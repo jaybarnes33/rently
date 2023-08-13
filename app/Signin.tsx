@@ -147,30 +147,6 @@ const Login = () => {
           <View className="my-2">
             <Button name="Sign In" onPress={handleLogin} />
           </View>
-
-          <View className="flex flex-row items-center justify-between mb-5">
-            <View className="border-b border-gray-300 -h-1 w-[40%]" />
-            <Text className="mx-5 text-gray-500">OR</Text>
-            <View className="border-b border-gray-300 -h-1 w-[40%]" />
-          </View>
-
-          <View className="flex flex-col gap-y-2">
-            <TouchableOpacity className="flex flex-row items-center justify-center w-full py-3 border border-gray-300 rounded-md">
-              <AntDesign name="google" size={20} color="gray" />
-              <Text className="ml-2 font-semibold text-gray-700">
-                Sign in with Student Email
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => navigation.push("Signup")}
-              className="flex flex-row items-center justify-center w-full py-3 border border-gray-300 rounded-md"
-            >
-              <Ionicons name="person" size={20} color="gray" />
-              <Text className="ml-2 font-semibold text-gray-700">
-                Create a new account
-              </Text>
-            </TouchableOpacity>
-          </View>
         </View>
       )}
     </Screen>
