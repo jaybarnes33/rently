@@ -29,6 +29,7 @@ import { PayStackProps } from "react-native-paystack-webview/lib/types";
 import { Alert } from "react-native";
 import Amenities from "../components/Cards/Amenities";
 import { makeSecuredRequest } from "../utils/makeSecuredRequest";
+import { rentify } from "../utils/text";
 
 // TODO: Loading state when fetching data
 
@@ -296,12 +297,11 @@ const Listing = () => {
 
   const paystackWebViewRef = useRef<paystackProps.PayStackRef>(null);
 
-  const test = [
-    "https://umat.gh-accommodation.online/wp-content/uploads/2023/06/2019-10-14.jpg",
-    "https://umat.gh-accommodation.online/wp-content/uploads/2023/02/WhatsApp-Image-2023-06-21-at-08.03.49-1.jpg",
-    "https://umat.gh-accommodation.online/wp-content/uploads/2023/02/WhatsApp-Image-2023-06-21-at-08.03.49.jpg",
+  const images = [
+    "https://pictures-ghana.jijistatic.com/33606657_MTI4NC0xNjk1LTA5NzFjOGVmNzI.webp",
+    "https://pictures-ghana.jijistatic.com/33380328_MTI4MC05NjAtYzQ5OWQ0Y2Q1ZA.webp",
+    "https://pictures-ghana.jijistatic.com/33645870_MTYwMC0xMjAwLTNlNjY0YmJjNDQ.webp",
   ];
-
   const bookNowButtonColor = hasBooking ? "gray-300" : "primary";
 
   return (
@@ -309,7 +309,7 @@ const Listing = () => {
       <ScrollView>
         <Screen showSafeArea={false}>
           <View>
-            <Carousel images={test} height={250} enableGestureSwipe={true} />
+            <Carousel images={images} height={250} enableGestureSwipe={true} />
           </View>
           <SafeAreaView className="absolute top-0">
             <TouchableOpacity
@@ -331,7 +331,9 @@ const Listing = () => {
               </View>
 
               <View className="flex-row justify-between">
-                <Text className="text-2xl font-bold">{data.hostelName}</Text>
+                <Text className="text-2xl font-bold capitalize">
+                  {rentify(data.hostelName as string)}
+                </Text>
 
                 <TouchableOpacity
                   onPress={() => SaveHostel(data.hostelId)}

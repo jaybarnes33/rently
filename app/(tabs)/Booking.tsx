@@ -142,7 +142,7 @@ const Booking = () => {
     <Screen>
       {isLoading && isLoadingSave && <LoadingComponent />}
       {isError && isErrorSaved && <ErrorComponent />}
-      {bookings && savedrentals && (
+      {bookings && savedHostels && (
         <View>
           <Text className="text-xl text-center font-semibold my-2">
             Booking
